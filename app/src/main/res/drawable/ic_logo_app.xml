@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Anillo exterior naranja -->
+    <path
+        android:fillColor="#E04F16"
+        android:pathData="M60,10 A50,50 0 1,1 59.9,10 Z" />
+
+    <!-- Círculo interior blanco -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M60,16 A44,44 0 1,1 59.9,16 Z" />
+
+    <!-- Fondo inferior granate -->
+    <path
+        android:fillColor="#8D171B"
+        android:pathData="M16,60 A44,44 0 0,0 104,60 Z" />
+
+    <!-- Cinta roja central -->
+    <path
+        android:fillColor="#C62828"
+        android:pathData="M12,62 L108,62 L108,76 L12,78 Z" />
+    <path
+        android:fillColor="#8D171B"
+        android:pathData="M6,62 L14,70 L6,78 Z" />
+    <path
+        android:fillColor="#8D171B"
+        android:pathData="M114,62 L106,70 L114,78 Z" />
+
+    <!-- Sombrero de chef / Nube (Naranja) -->
+    <path
+        android:fillColor="#F57C00"
+        android:pathData="M52,32 C52,27 56,24 60,24 C64,24 68,27 68,32 C71,32 74,35 74,38 C74,41 71,43 68,43 L52,43 C49,43 46,41 46,38 C46,35 49,32 52,32 Z" />
+
+    <!-- Campana de comida (Roja) -->
+    <!-- Asidero superior -->
+    <path
+        android:fillColor="#C62828"
+        android:pathData="M60,39 A3,3 0 1,1 59.9,39 Z" />
+    <!-- Domo principal -->
+    <path
+        android:fillColor="#C62828"
+        android:pathData="M40,57 C40,45 48,42 60,42 C72,42 80,45 80,57 Z" />
+    <!-- Bandeja base -->
+    <path
+        android:fillColor="#C62828"
+        android:pathData="M35,58 L85,58 C86,58 87,59 87,60 L87,61 C87,62 86,62 85,62 L35,62 C34,62 33,62 33,61 L33,60 C33,59 34,58 35,58 Z" />
+
+    <!-- Tenedor izquierdo -->
+    <path
+        android:fillColor="#F57C00"
+        android:pathData="M30,42 C32,48 35,52 38,57 C36,53 34,47 33,40 C31,43 29,45 28,48 C29,46 30,44 30,42 Z" />
+
+    <!-- Tenedor derecho -->
+    <path
+        android:fillColor="#F57C00"
+        android:pathData="M90,42 C88,48 85,52 82,57 C84,53 86,47 87,40 C89,43 91,45 92,48 C91,46 90,44 90,42 Z" />
+</vector>
