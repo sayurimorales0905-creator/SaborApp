@@ -67,6 +67,11 @@ class PlatoFormActivity : AppCompatActivity() {
         }
 
         val precio = precioStr.toDoubleOrNull() ?: 0.0
+        if (precio <= 0) {
+            binding.etPrecio.error = "Precio inválido"
+            Toast.makeText(this, "Precio inválido", Toast.LENGTH_SHORT).show()
+            return
+        }
 
         if (platoId > 0) {
             val plato = Plato(platoId, nombre, categoria, precio, disponible)

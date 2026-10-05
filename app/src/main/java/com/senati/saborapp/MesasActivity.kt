@@ -133,12 +133,17 @@ class MesasActivity : AppCompatActivity() {
                 val num = numStr.toInt()
                 val cap = capStr.toInt()
 
+                if (cap !in 1..12) {
+                    Toast.makeText(this, "Capacidad inválida", Toast.LENGTH_SHORT).show()
+                    return@setPositiveButton
+                }
+
                 val res = dbHelper.insertarMesa(Mesa(numero = num, capacidad = cap, estado = "Libre"))
                 if (res > 0) {
                     Toast.makeText(this, "Mesa $num registrada con éxito", Toast.LENGTH_SHORT).show()
                     cargarMesas()
                 } else {
-                    Toast.makeText(this, "Error: El número de mesa ya existe", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "La mesa ya existe", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
