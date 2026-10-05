@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.senati.saborapp.databinding.ActivityPlatoFormBinding
 
@@ -87,9 +88,24 @@ class PlatoFormActivity : AppCompatActivity() {
 
     private fun eliminar() {
         if (platoId > 0) {
-            dbHelper.eliminarPlato(platoId)
-            Toast.makeText(this, "Plato eliminado", Toast.LENGTH_SHORT).show()
-            finish()
+            AlertDialog.Builder(this)
+                .setTitle("Confirmar eliminación")
+                .setMessage("¿Deseas eliminar este plato?")
+                .setPositiveButton("Eliminar") { _, _ ->
+                    try {
+                        val res = dbHelper.eliminarPlato(platoId)
+                        if (res > 0) {
+                            Toast.makeText(this, "Plato eliminado", Toast.LENGTH_SHORT).show()
+                            finish()
+                        } else {
+                            Toast.makeText(this, "No se puede eliminar: tiene pedidos", Toast.LENGTH_SHORT).show()
+                        }
+                    } catch (e: Exception) {
+                        Toast.makeText(this, "No se puede eliminar: tiene pedidos", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                .setNegativeButton("Cancelar", null)
+                .show()
         }
     }
 }
