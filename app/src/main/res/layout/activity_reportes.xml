@@ -52,6 +52,7 @@
                         android:textSize="13sp" />
 
                     <TextView
+                        android:id="@+id/tvVentaTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
@@ -94,6 +95,7 @@
                                     android:textSize="11sp" />
 
                                 <TextView
+                                    android:id="@+id/tvPedidosCount"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="42"
@@ -130,6 +132,7 @@
                                     android:textSize="11sp" />
 
                                 <TextView
+                                    android:id="@+id/tvTicketPromedio"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="S/ 29.50"

@@ -13,6 +13,21 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // HU-12: Verificación de sesión recordada en SharedPreferences
+        val prefs = getSharedPreferences("saborapp_session", MODE_PRIVATE)
+        val usuarioGuardado = prefs.getString("usuario", null)
+        val rolGuardado = prefs.getString("rol", null)
+
+        if (!usuarioGuardado.isNullOrEmpty() && !rolGuardado.isNullOrEmpty()) {
+            val intent = Intent(this, MenuActivity::class.java)
+                .putExtra("usuario", usuarioGuardado)
+                .putExtra("rol", rolGuardado)
+            startActivity(intent)
+            finish()
+            return
+        }
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -46,6 +61,13 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, R.string.error_credenciales, Toast.LENGTH_SHORT).show()
             return
         }
+
+        // HU-12: Guardar sesión en SharedPreferences
+        val prefs = getSharedPreferences("saborapp_session", MODE_PRIVATE)
+        prefs.edit()
+            .putString("usuario", usuarioEncontrado.usuario)
+            .putString("rol", usuarioEncontrado.rol)
+            .apply()
 
         val intent = Intent(this, MenuActivity::class.java)
             .putExtra("usuario", usuarioEncontrado.usuario)

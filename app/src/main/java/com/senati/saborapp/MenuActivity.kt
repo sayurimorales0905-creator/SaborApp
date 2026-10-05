@@ -31,7 +31,11 @@ class MenuActivity : AppCompatActivity() {
         binding.btnPedidos.setOnClickListener { abrir(PedidoActivity::class.java) }
         binding.btnReportes.setOnClickListener { abrir(ReportesActivity::class.java) }
 
+        // HU-12: Borrar SharedPreferences al Salir
         binding.btnSalir.setOnClickListener {
+            val prefs = getSharedPreferences("saborapp_session", MODE_PRIVATE)
+            prefs.edit().clear().apply()
+
             val intent = Intent(this, LoginActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
