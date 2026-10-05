@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sabor_naranja">#DF4C1E</color>
+    <color name="sabor_naranja_oscuro">#C83B0E</color>
+    <color name="sabor_naranja_suave">#FDF0EB</color>
+    <color name="sabor_rojo">#C62828</color>
+    <color name="sabor_rojo_suave">#FFEBEE</color>
+    <color name="sabor_crema">#FAF8F7</color>
+    <color name="sabor_gris_fondo">#F2F2F2</color>
+    <color name="sabor_gris_texto">#757575</color>
+    <color name="sabor_gris_borde">#E0E0E0</color>
+    <color name="sabor_negro">#1F1F1F</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+</resources>
