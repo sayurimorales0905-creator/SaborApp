@@ -18,22 +18,16 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <!-- Logo Círculo 'S' -->
-        <FrameLayout
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:background="@drawable/bg_circle_orange"
-            android:layout_marginBottom="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="S"
-                android:textColor="@color/sabor_naranja"
-                android:textSize="32sp"
-                android:textStyle="bold" />
-        </FrameLayout>
+        <!-- Logo Oficial SaborApp -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivLogoLogin"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/login_titulo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo_saborapp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
 
         <!-- Título -->
         <TextView
